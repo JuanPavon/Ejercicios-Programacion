@@ -19,21 +19,28 @@ public class ej32tema5 {
     System.out.println("Introduce un número entero");
     long num = Integer.parseInt(s.nextLine());
     int divisor = 10;
-    int centinela = 1;
+    boolean centinela = true;
     int contador = 0;
-    int digito;
+    int digito = 0;
     
     do {
-      digito = (int) (num % divisor);
+      do { //este primer do saca los digitos en una varible para usarlos debajo
+        digito = (int) (num % divisor);
+        
+        if (digito > 9) {
+          digito = digito / (divisor / 10);
+        }
+      } while (digito > 9);
+      
       if ((digito % 2) == 0) {
         contador = contador + digito;
       }
       
       divisor = divisor * 10;
       if (num / divisor == 0) {
-        centinela = 0;
+        centinela = false;
       }
-    } while (centinela != 0);
+    } while (centinela);
     
     System.out.println("La suma de los digitos pares es " + contador);
     }
