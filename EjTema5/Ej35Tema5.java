@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ej35tema5;
+
 import java.util.Scanner;
 
 /**
@@ -25,6 +25,7 @@ public class Ej35Tema5 {
       System.out.println("El número introducido no es correcto");
     }
     
+    //pinta la primera línea
     System.out.print("*");
     for (int i = 0; i < (altura - 2); i++) {
       System.out.print(" ");
@@ -35,6 +36,7 @@ public class Ej35Tema5 {
     int aux2 = 1;
     int aux4 = 4;
     
+    //pinta las líneas intermedias sin incluir el centro
     for (int ii = 1; ii < (altura / 2); ii++) {
       
       int aux1 = 0;
@@ -60,6 +62,52 @@ public class Ej35Tema5 {
       System.out.println();
       
     }
+    
+    //pinta la línea central
+    for (int iii = 0; iii < (altura / 2); iii++) {
+      System.out.print(" ");
+      }
+      
+    System.out.print("*");
+    System.out.println();
+    
+    aux2--;
+    aux4 -= 2; 
+    
+    //pinta desde el centro hacia abajo
+    for (int ii = 1; ii < (altura / 2); ii++) {
+      
+      int aux1 = 0;
+      
+      while (aux1 < aux2) {
+        System.out.print(" ");
+        aux1++;
+      }
+      aux2--;
+      
+      System.out.print("*");
+      
+      int aux3 = 0;
+      
+      while (aux3 < (altura - aux4)) {
+        System.out.print(" ");
+        aux3++;
+      }
+      aux4 -= 2;
+      
+      System.out.print("*");
+      
+      System.out.println();
+      
+    }
+    
+    //pinta la última línea
+    System.out.print("*");
+    for (int i = 0; i < (altura - 2); i++) {
+      System.out.print(" ");
+    }
+    System.out.print("*");
+    System.out.println();
   }
   
 }
